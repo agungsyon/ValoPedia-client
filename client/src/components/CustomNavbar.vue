@@ -1,29 +1,39 @@
 <template>
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+  <div class="container">
+    <!-- logo -->
+    <a class="navbar-brand fs-4" href="#">ValoPedia</a>
+    <!-- toggle btn -->
+    <button class="navbar-toggler shadow-none berder-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+
+    <!-- sidebar -->
+    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <!-- sidebar header -->
+        <div class="offcanvas-header text-white border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ValoPedia</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
+      <!-- sidebar body -->
+      <div class="offcanvas-body d-flex flex-column flex-lg-row p-lg-0 p-4">
+        <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+          <li class="nav-item mx-2">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Agent</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Bundle</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Contact
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">ahmatagung645@gmail.com</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -32,10 +42,12 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
+        <!-- login/regis -->
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+            <a href="#" class="text-white">Login</a>
+            <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: maroon;">Sign Up</a>
+
+        </div>
       </div>
     </div>
   </div>
@@ -49,5 +61,11 @@ export default {
 </script>
 
 <style>
-
+@media(max-width: 991px) {
+    .sidebar{
+        /* background-color: #010204; */
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
 </style>
