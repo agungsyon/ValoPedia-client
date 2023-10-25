@@ -23,13 +23,16 @@
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-lg-0 p-4">
         <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
           <li class="nav-item mx-2">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" href="#" active-class="active">Home</a>
           </li>
           <li class="nav-item mx-2">
-            <RouterLink to="/" class="nav-link">Agent</RouterLink>
+            <RouterLink to="/" class="nav-link" active-class="active">Agent</RouterLink>
           </li>
           <li class="nav-item mx-2">
-            <RouterLink to="/bundle" class="nav-link">Bundle</RouterLink>
+            <RouterLink to="/bundle" class="nav-link" active-class="active">Bundle</RouterLink>
+          </li>
+          <li class="nav-item mx-2">
+            <RouterLink to="/inventory" class="nav-link" active-class="active">Inventory</RouterLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,7 +1,7 @@
 <template>
-  <div class="text-white">
+  <a :href="`https://playvalorant.com/en-us/agents/${agent.name}`" target="blank">
     <!-- <h2>Card Images</h2> -->
-    <div class="card mb-5" style="width: 15rem">
+    <div class="card card-agent mb-5" style="width: 18rem">
       <img :src="agent.image" class="card-img-top" alt="img" />
       <div class="card-body bg-dark text-white">
         <h4 class="card-title pb-2">{{ agent.name }}</h4>
@@ -15,22 +15,26 @@
         </p>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   name: "AgentCard",
+  components: {},
   props: ["agent"],
 };
 </script>
 
-<style>
+<style scoped>
+a {
+  text-decoration: none;
+}
 .card {
   transition: all 0.3s;
   border: 0;
 }
-.card:hover {
+.card-agent:hover {
   transform: scale(1.15);
 }
 

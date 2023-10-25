@@ -6,6 +6,7 @@ export const useValorantStore = defineStore("valorant", {
     return {
       agents: [],
       bundles: [],
+      inventories: []
     };
   },
   getters: {},
@@ -34,5 +35,20 @@ export const useValorantStore = defineStore("valorant", {
             console.log(error);
           }
     },
+    async fetchInventories() {
+      try {
+        const { data } = await axios({
+          method: "GET",
+          url: "/inventories",
+          headers: {
+            access_token: localStorage.access_token,
+          },
+        });
+        console.log(data);
+        this.inventories = data
+      } catch (error) {
+        console.log(error);
+      }
+    }
   },
 });

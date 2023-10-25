@@ -1,6 +1,6 @@
 <template>
   <div class="vh100 overflow-hidden">
-    <CustomNavbar/>
+    <CustomNavbar v-if="this.$route.path !== '/login'"/>
     <RouterView />
   </div>
 </template>
