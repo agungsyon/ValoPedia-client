@@ -3,7 +3,10 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
   <div class="container">
     <!-- logo -->
-    <a class="navbar-brand fs-4" href="#">ValoPedia</a>
+    
+    <a class="navbar-brand fs-4">
+        <img src="../assets/ValoPediaLogo.png" class="logo-img" alt="logo ValoPedia">
+        Valo<span style="color: #fd3556;">Pedia</span></a>
     <!-- toggle btn -->
     <button class="navbar-toggler shadow-none berder-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -13,7 +16,7 @@
     <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <!-- sidebar header -->
         <div class="offcanvas-header text-white border-bottom">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ValoPedia</h5>
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Valo<span style="color: #fd3556;">Pedia</span></h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <!-- sidebar body -->
@@ -23,10 +26,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Agent</a>
+            <RouterLink to="/" class="nav-link">Agent</RouterLink>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Bundle</a>
+            <RouterLink to="/bundle" class="nav-link">Bundle</RouterLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,8 +67,15 @@ export default {
 @media(max-width: 991px) {
     .sidebar{
         /* background-color: #010204; */
-        background-color: rgba(255, 255, 255, 0.15);
+        background-color: rgba(48, 16, 16, 0.15);
         backdrop-filter: blur(10px);
     }
+}
+
+.logo-img {
+  width: 40px; /* Adjust the width to your desired size */
+  height: auto; /* This maintains the aspect ratio */
+  margin-right: 10px; /* Add margin for spacing */
+  border-radius: 5px;
 }
 </style>

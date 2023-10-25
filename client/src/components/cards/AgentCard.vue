@@ -1,21 +1,17 @@
 <template>
-  <div>
-    <h2>Card Images</h2>
-    <div class="card" style="width: 18rem">
-      <img
-        src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210322182256/AngularJS-Tutorial.png"
-        class="card-img-top"
-        alt="img"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Angular JS</h5>
+  <div class="text-white">
+    <!-- <h2>Card Images</h2> -->
+    <div class="card mb-5" style="width: 15rem">
+      <img :src="agent.image" class="card-img-top" alt="img" />
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title pb-2">{{ agent.name }}</h4>
+        <h6 class="card-title pb-2">
+          <img :src="agent.roleIcon" class="logo-role" />
+          {{ agent.role }}
+        </h6>
 
         <p class="card-text">
-          AngularJS is a Javascript open-source front-end framework that is mainly used to
-          develop single-page web applications(SPAs).
-        </p>
-        <p class="card-text">
-          <small class="text-muted"> GeeksforGeeks </small>
+          {{ agent.description }}
         </p>
       </div>
     </div>
@@ -25,14 +21,23 @@
 <script>
 export default {
   name: "AgentCard",
+  props: ["agent"],
 };
 </script>
 
 <style>
 .card {
   transition: all 0.3s;
+  border: 0;
 }
 .card:hover {
   transform: scale(1.15);
+}
+
+.logo-role {
+  width: 25px; /* Adjust the width to your desired size */
+  height: auto; /* This maintains the aspect ratio */
+  margin-right: 10px; /* Add margin for spacing */
+  border-radius: 5px;
 }
 </style>
