@@ -32,7 +32,7 @@
             <RouterLink to="/bundle" class="nav-link" active-class="active">Bundle</RouterLink>
           </li>
           <li class="nav-item mx-2">
-            <RouterLink to="/inventory" class="nav-link" active-class="active">Inventory</RouterLink>
+            <RouterLink v-if="access_token" to="/inventory" class="nav-link" active-class="active">Inventory</RouterLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,9 +50,8 @@
         </ul>
         <!-- login/regis -->
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <a href="#" class="text-white">Login</a>
-            <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: maroon;">Sign Up</a>
-
+            <router-link v-if="!access_token" to="/login" class="text white text-decoration-none px-3 py-1 rounded-4" style="background-color: maroon; color: white;"> Login/Register</router-link>
+            <a href="#" v-if="access_token" @click.prevent="handleLogout" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: maroon; ">Log Out <i class="bi bi-box-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -61,12 +60,21 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'pinia';
+import { useUserStore } from '../stores/userStore';
+
 export default {
-    name: "CustomNavbar"
+    name: "CustomNavbar",
+    computed: {
+      ...mapState(useUserStore, ["access_token"])
+    },
+    methods: {
+      ...mapActions(useUserStore, ["handleLogout"])
+    }
 }
 </script>
 
-<style>
+<style scoped>
 @media(max-width: 991px) {
     .sidebar{
         /* background-color: #010204; */

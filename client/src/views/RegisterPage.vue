@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center">
       <img src="../assets/ValoPediaLogo.png" alt="" class="logo-image" />
     </div>
-    <h2>Login</h2>
+    <h2>Register</h2>
     <form @submit.prevent="register">
       <div class="user-box">
         <input type="text" required v-model="inputRegister.email" />
@@ -14,12 +14,12 @@
         <input type="password" required v-model="inputRegister.password" />
         <label>Password</label>
       </div>
-      <p class="text-white mt-2">
-        don't have an account?
-        <RouterLink to="/register" class="register-style">Register</RouterLink>
-      </p>
 
       <div class="d-flex justify-content-center">
+        <button class="mr-5">
+
+          <router-link to="/login">Cancel</router-link>
+        </button>
         <button type="submit">
           Submit
           <span></span>
@@ -51,7 +51,7 @@ export default {
   methods: {
     ...mapActions(useUserStore, ["handleRegister"]),
     register() {
-      this.handleRegister(this, inputRegister);
+      this.handleRegister(this.inputRegister);
     },
   },
 };

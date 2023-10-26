@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "../helpers/axios";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 export const useUserStore = defineStore("user", {
   state() {
@@ -20,26 +20,24 @@ export const useUserStore = defineStore("user", {
         localStorage.access_token = data.access_token;
         this.access_token = data.access_token;
 
-        // setTimeout(() => {
-        //   Swal.fire({
-        //     position: "center",
-        //     icon: "success",
-        //     title: "Successfuly Login",
-        //     showConfirmButton: false,
-        //     timer: 1500,
-        //   });
-        // }, 300);
-        this.router.push("/");
+        setTimeout(() => {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Successfuly Login",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.router.push("/");
+        }, 300);
       } catch (error) {
-        console.log(error);
-        console.log(error.response.data.message);
-        // setTimeout(() => {
-        //   Swal.fire({
-        //     icon: "error",
-        //     title: "Oops...",
-        //     text: error.response.data.message,
-        //   });
-        // }, 300);
+        setTimeout(() => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+        }, 300);
       }
     },
     async loginGoogle(response) {
@@ -57,16 +55,16 @@ export const useUserStore = defineStore("user", {
 
         console.log(data)
 
-        // setTimeout(() => {
-        //   Swal.fire({
-        //     position: 'center',
-        //     icon: 'success',
-        //     title: 'Successfuly Login',
-        //     showConfirmButton: false,
-        //     timer: 1500
-        //   })
-        // }, 300)
-        this.router.push("/");
+        setTimeout(() => {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Successfuly Login',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.router.push("/");
+        }, 300)
       } catch (error) {
         console.log(error)
       }
@@ -79,42 +77,42 @@ export const useUserStore = defineStore("user", {
           data: inputRegister,
         });
 
-        // setTimeout(() => {
-        //   Swal.fire({
-        //     position: "center",
-        //     icon: "success",
-        //     title: "Success Register",
-        //     showConfirmButton: false,
-        //     timer: 1500,
-        //   });
-        // }, 300);
-        this.router.push("/login");
+        setTimeout(() => {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Success Register",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.router.push("/login");
+        }, 300);
       } catch (error) {
         console.log(error);
-        // setTimeout(() => {
-        //   Swal.fire({
-        //     icon: "error",
-        //     title: "Oops...",
-        //     text: error.response.data.message,
-        //   });
-        // }, 300);
+        setTimeout(() => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+        }, 300);
       }
     },
 
     handleLogout() {
       localStorage.clear();
 
-    //   setTimeout(() => {
-    //     Swal.fire({
-    //       position: "center",
-    //       icon: "success",
-    //       title: "Successfuly Logout",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    // }, 200);
-    this.access_token = null;
-    this.router.push("/login");
+      setTimeout(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfuly Logout",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        this.access_token = null;
+        this.router.push("/login");
+    }, 200);
     },
   },
 });
