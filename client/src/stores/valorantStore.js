@@ -11,11 +11,12 @@ export const useValorantStore = defineStore("valorant", {
   },
   getters: {},
   actions: {
-    async fetchAgents() {
+    async fetchAgents(params) {
       try {
         const { data } = await axios({
           method: "GET",
           url: "/agents",
+          params
         });
         console.log(data);
         this.agents = data
@@ -23,11 +24,12 @@ export const useValorantStore = defineStore("valorant", {
         console.log(error);
       }
     },
-    async fetchBundles() {
+    async fetchBundles(params) {
         try {
             const { data } = await axios({
               method: "GET",
               url: "/bundles",
+              params
             });
             console.log(data);
             this.bundles = data

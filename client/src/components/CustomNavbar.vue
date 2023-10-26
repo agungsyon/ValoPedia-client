@@ -23,10 +23,7 @@
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-lg-0 p-4">
         <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
           <li class="nav-item mx-2">
-            <a class="nav-link" aria-current="page" href="#" active-class="active">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <RouterLink to="/" class="nav-link" active-class="active">Agent</RouterLink>
+            <RouterLink to="/" class="nav-link" active-class="active">Home</RouterLink>
           </li>
           <li class="nav-item mx-2">
             <RouterLink to="/bundle" class="nav-link" active-class="active">Bundle</RouterLink>
@@ -40,11 +37,10 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="#">ahmatagung645@gmail.com</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="https://github.com/agungsyon" target="blank"><i class="bi bi-github"></i> Github</a></li>
             </ul>
           </li>
         </ul>
