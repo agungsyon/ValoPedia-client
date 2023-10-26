@@ -7,27 +7,27 @@
     <h2>Login</h2>
     <form @submit.prevent="login">
       <div class="user-box">
-        <input type="text"  required v-model="inputLogin.email"/>
+        <input type="text" required v-model="inputLogin.email" />
         <label>Username</label>
       </div>
       <div class="user-box">
-        <input type="password" required v-model="inputLogin.password"/>
+        <input type="password" required v-model="inputLogin.password" />
         <label>Password</label>
       </div>
       <p class="text-white mt-2">
         don't have an account?
         <RouterLink to="/register" class="register-style">Register</RouterLink>
       </p>
-      <hr class="mt-4" style="color: white;">
-      <p class=" text-white d-flex justify-content-center m-0">or continue via</p><br>
+      <hr class="mt-4" style="color: white" />
+      <p class="text-white d-flex justify-content-center m-0">or continue via</p>
+      <br />
       <div class="d-flex flex-column flex-lg-row">
-        <ul class="list-unstyled d-flex justify-content-center align-items-center fs-5 flex-grow-1 pe-3 text-white">
-            <li class="mx-2">
-                <a href="#"><i class="bi bi-discord"></i></a>
-            </li>
-            <li class="mx-2">
-                <a href="#"><i class="bi bi-google"></i></a>
-            </li>
+        <ul
+          class="list-unstyled d-flex justify-content-center align-items-center fs-5 flex-grow-1 pe-3 text-white"
+        >
+          <li class="mx-2">
+            <GoogleLogin :callback="callback" />
+          </li>
         </ul>
       </div>
       <div class="d-flex justify-content-center">
@@ -72,7 +72,6 @@ export default {
 </script>
 
 <style scoped>
-
 .list-unstyled {
   list-style: none; /* Remove list bullet points */
   display: flex;
@@ -88,7 +87,7 @@ export default {
   color: inherit; /* Inherit text color from parent */
 }
 .logo-image {
-    border-radius: 50px;
+  border-radius: 50px;
   width: 70px; /* Adjust the width to your desired size */
   height: 70px; /* Adjust the height to your desired size */
 }
@@ -100,7 +99,7 @@ button {
 }
 
 .register-style {
-    text-decoration: none
+  text-decoration: none;
 }
 
 .login-box {

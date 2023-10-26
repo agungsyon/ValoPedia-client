@@ -45,7 +45,7 @@ export const useUserStore = defineStore("user", {
       try {
         const { data } = await axios({
           method: 'POST',
-          url: `/pub/google-sign-in`,
+          url: `/login/google`,
           headers: {
             google_token: credential
           }

@@ -16,10 +16,6 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <button class="mr-5">
-
-          <router-link to="/login">Cancel</router-link>
-        </button>
         <button type="submit">
           Submit
           <span></span>
